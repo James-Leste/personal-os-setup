@@ -1,4 +1,7 @@
 # My Setup for my computers
+**Personal experience:** 5 years using Windows. Switched to MacOS 1.5 years ago.
+
+**Rationale:** Unify the experience between Windows and MacOS, including keyboard mapping (MacOS as baseline), terminal, workflow...
 
 ## Windows
 ### Terminal
