@@ -2,9 +2,12 @@
 
 ## Windows
 ### Terminal
-1. install WSL with latest Ubuntu Distro
-2. install Windows Terminal
-3. set zsh as the default shell in WSL
+1. Install WSL with latest Ubuntu Distro
+2. Install Windows Terminal and set hotkey
+
+Go `Setting -> Actions -> Add new` and set `Crtl+q` as `Show/Hide the Terminal Window`.
+
+3. Set zsh as the default shell in WSL
 4. install [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) and [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search). source the setting in the zsh respectively
 5. Creating `~/.zshrc` and copy paste the following content
 ```shell
@@ -30,6 +33,27 @@ export PROMPT='${COLOR_CONDA}($CONDA_DEFAULT_ENV) ${COLOR_DIR}%2d$(parse_git_bra
 
 # Add a space only if the branch is not empty
 export PROMPT='${COLOR_CONDA}($CONDA_DEFAULT_ENV) ${COLOR_DIR}%2d$(if [[ -n $(parse_git_branch) ]]; then echo " ${COLOR_GIT}$(parse_git_branch)"; fi) ${COLOR_DEF}> '
+```
+6. Install and setup Miniconda
+```shell
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/ziqiwang/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+  eval "$__conda_setup"
+else
+  if [ -f "/home/ziqiwang/miniconda3/etc/profile.d/conda.sh" ]; then
+      . "/home/ziqiwang/miniconda3/etc/profile.d/conda.sh"
+  else
+      export PATH="/home/ziqiwang/miniconda3/bin:$PATH"
+  fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+```
+```shell
+# prevent conda from modifying the prompt
+conda config --set changeps1 False
 ```
 ### Keyboard
 1. Install [PowerToys](https://learn.microsoft.com/en-us/windows/powertoys/install)
