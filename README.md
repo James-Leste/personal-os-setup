@@ -16,7 +16,19 @@ More instruction on: [WSL start guide](https://learn.microsoft.com/en-us/windows
 Go `Setting -> Actions -> Add new` and set `Crtl+q` as `Show/Hide the Terminal Window`.
 
 3. Set zsh as the default shell in WSL
+```shell
+chsh -s $ (which zsh)
+```
 4. install [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) and [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search). source the setting in the zsh respectively
+```shell
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+```
+```shell
+git clone git@github.com:zsh-users/zsh-history-substring-search.git
+echo "source ${(q-)PWD}/zsh-history-substring-search/zsh-history-substring-search" >> ${ZDOTDIR:-$HOME}/.zshrc
+```
+
 5. Creating `~/.zshrc` and copy paste the following content
 ```shell
 parse_git_branch() {
