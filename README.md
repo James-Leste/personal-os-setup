@@ -6,6 +6,11 @@
 ## Windows
 ### Terminal
 1. Install WSL with latest Ubuntu Distro
+```
+wsl --install -d <Distribution Name>
+```
+More instruction on: [WSL start guide](https://learn.microsoft.com/en-us/windows/wsl/install)
+
 2. Install Windows Terminal and set hotkey
 
 Go `Setting -> Actions -> Add new` and set `Crtl+q` as `Show/Hide the Terminal Window`.
@@ -58,12 +63,18 @@ unset __conda_setup
 # prevent conda from modifying the prompt
 conda config --set changeps1 False
 ```
+
+### Mouse
+[Reverse Mouse Scroll](https://github.com/microsoft/PowerToys/issues/6434)
+
 ### Keyboard
 1. Install [PowerToys](https://learn.microsoft.com/en-us/windows/powertoys/install)
 2. Go to `C:\Users\{username}\AppData\Local\Microsoft\PowerToys\Keyboard Manager`. Backup the original `default.json`. Create a new `default.json` and copy paste the following mapping. Result: **Map the keyboard layout identical with MacOS**
 ```json
 {"remapKeys":{"inProcess":[{"originalKeys":"164","newRemapKeys":"162"},{"originalKeys":"91","newRemapKeys":"164"},{"originalKeys":"162","newRemapKeys":"91"}]},"remapShortcuts":{"global":[{"originalKeys":"160;27","newRemapKeys":"160;192"},{"originalKeys":"162;9","newRemapKeys":"164;9"},{"originalKeys":"162;77","newRemapKeys":"91;68"},{"originalKeys":"162;160;9","newRemapKeys":"164;160;9"},{"originalKeys":"162;164;27","newRemapKeys":"164;115"},{"originalKeys":"91;9","newRemapKeys":"162;9"},{"originalKeys":"91;160;9","newRemapKeys":"162;160;9"},{"originalKeys":"91;162;32","newRemapKeys":"91;186"}],"appSpecific":[{"originalKeys":"162;37","newRemapKeys":"164;37","targetApp":"chrome"},{"originalKeys":"162;39","newRemapKeys":"164;39","targetApp":"chrome"},{"originalKeys":"91;32","newRemapKeys":"162;32","targetApp":"code"},{"originalKeys":"91;65","newRemapKeys":"162;65","targetApp":"windowsterminal"},{"originalKeys":"91;67","newRemapKeys":"162;67","targetApp":"windowsterminal"}]}}
 ```
+### Screen (if applicable)
+[Arrange multiple screens](https://support.microsoft.com/en-us/windows/how-to-use-multiple-monitors-in-windows-329c6962-5a4d-b481-7baa-bec9671f728a)
 ### Clipboard
 Windows clipboard
 `windows + V`
